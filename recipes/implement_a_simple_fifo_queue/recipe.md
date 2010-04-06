@@ -24,8 +24,9 @@ Redis' built-in `List` datatype is a natural-born queue. To effectively implemen
 	harry
 
 
-	
-
 Discussion
 ----------
+
+Redis comes with four basic list push and pop operations (RPUSH, LPUSH, LPOP, RPOP), as well as *blocking pop* operations. They are all O(1) operations, so the time complexity of the commands does not depend upon the length of the list. 
+
 
