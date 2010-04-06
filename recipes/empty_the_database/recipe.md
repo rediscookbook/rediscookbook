@@ -1,14 +1,16 @@
-# Problem
+# How to Empty the Database
+
+### Problem
 
 You want to delete all keys (and their associated values) that have been stored in Redis.
 
-# Solution
+### Solution
 
 Use Redis' FLUSHALL command. 
 
 	$redis-cli flushall
 	OK
 
-# Discussion
+### Discussion
 
 
