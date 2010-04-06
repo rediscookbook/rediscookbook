@@ -4,6 +4,8 @@ You want to delete all keys (and their associated values) that have been stored 
 
 # Solution
 
+Use Redis' FLUSHALL command. 
+
 	$redis-cli flushall
 	OK
 
