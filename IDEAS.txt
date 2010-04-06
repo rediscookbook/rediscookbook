@@ -1,0 +1,35 @@
+How to create a web chat (Pieter Noordhuis)
+http://gist.github.com/348262
+
+How to track which users are currently online (Luke Melia)
+http://www.lukemelia.com/blog/archives/2010/01/17/redis-in-practice-whos-online/
+
+How to implement a distributed lock (amix)
+http://amix.dk/blog/post/19386
+
+How to write a twitter clone (Daniel Lucraft)
+http://github.com/danlucraft/retwis-rb
+
+How to track user locations with Node.js (Rick Olson)
+http://techno-weenie.net/2010/2/3/where-s-waldo-track-user-locations-with-node-js-and-redis
+
+How to handle usage stats (Ben O'Steen)
+http://oxfordrepo.blogspot.com/2010/01/usage-stats-and-redis.html
+
+How to do crowdsourced document analysis (Simon Willison)
+http://simonwillison.net/2009/Dec/20/crowdsourcing/
+
+How to build an URL shortener (Sunil Arora)
+http://sunilarora.org/url-shortener-service-using-redis
+
+How to memoize values (Levi Cook)
+http://github.com/levicook/memodis
+
+How to inspect the content of redis (Chris Kite)
+http://github.com/chriskite/rediscover
+
+How to do highly-concurrent atomic operations (Nate Wiger)
+http://github.com/nateware/redis-objects
+
+How to use redis from rails (Tim Lossen)
+http://github.com/tlossen/remodel
