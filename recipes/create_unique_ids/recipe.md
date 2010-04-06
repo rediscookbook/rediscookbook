@@ -4,7 +4,7 @@ You want to atomically provide a unique ID for an arbitrary object.
 
 # Solution
 
-	Utilize Redis' built-in atomic INCR function.
+Utilize Redis' built-in atomic INCR function.
 
 	$redis-cli INCR <an_object_name>
 	(interger) 1
