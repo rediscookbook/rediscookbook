@@ -1,13 +1,11 @@
-#Implement a Simple FIFO Queue
+# Implement a Simple FIFO Queue
 
-Problem
--------
+### Problem
 
 You want to use Redis to implement a simple abstract first-in, first-out
 queue, with basic push and pop operations.
 
-Solution
---------
+### Solution
 
 Redis' built-in `List` datatype is a natural-born queue. To effectively
 implement a simple queue, all you need to do is utilize a limited set 
@@ -27,8 +25,7 @@ of `List` operations.
 	harry
 
 
-Discussion
-----------
+### Discussion
 
 Redis comes with four basic list push and pop operations (RPUSH, LPUSH, 
 LPOP, RPOP), as well as *blocking pop* operations. They are all O(1) 
