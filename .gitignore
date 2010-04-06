@@ -1,1 +1,4 @@
 dump.rdb
+*~
+*.pyc
+*.swp
