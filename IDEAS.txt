@@ -31,5 +31,5 @@ http://github.com/chriskite/rediscover
 How to do highly-concurrent atomic operations (Nate Wiger)
 http://github.com/nateware/redis-objects
 
-How to use redis from rails (Tim Lossen)
-http://github.com/tlossen/remodel
+How to write a boogle clone (Nick Quaranto)
+http://github.com/qrush/beesknees
