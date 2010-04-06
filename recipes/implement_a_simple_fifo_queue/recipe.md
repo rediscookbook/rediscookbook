@@ -41,11 +41,12 @@ and is a good introduction to building think Redis-powered abstractions.
 For example,  here's a Python queue that provides object-level 
 interaction (and uses INCR to ensure a unique ID for each new queue): 
 
+    r = redis.Redis()
 
     class Queue(object):
         """An abstract FIFO queue"""
         def __init__(self):
-            local_id = increment.increment("queue_space")
+            local_id = r.incr("queue_space")
             id_name = "queue:%s" %(local_id)
             self.id_name = id_name
  
