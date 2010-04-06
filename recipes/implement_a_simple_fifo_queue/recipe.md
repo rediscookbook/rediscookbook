@@ -36,7 +36,7 @@ operations, so the time complexity of the commands does not depend upon
  the length of the list. 
 
 Implementing a simple queue atop the Redis commands is straight-forward
-and is a good introduction to building think Redis-powered abstractions. 
+and is a good introduction to building thin Redis-powered abstractions. 
 
 For example,  here's a Python queue that provides object-level 
 interaction (and uses INCR to ensure a unique ID for each new queue): 
