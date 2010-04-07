@@ -1,0 +1,7 @@
+<h3>Recipes</h3>
+
+<ul>
+  <% recipes.each do |recipe| %>
+    <li><a href="<%= recipe %>"><%= recipe.sub('.html', '').split('_').map { |x| x.capitalize }.join(' ') %></a></li>
+  <% end %>
+</ul>
