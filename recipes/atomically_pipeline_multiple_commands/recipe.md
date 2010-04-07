@@ -7,7 +7,7 @@ You want to execute several Redis commands with a single atomic command.
 ### Solution
 
 Use the MULTI/EXEC command to create a queue of commands and execute them atomically.
-Use the `MULTI` command to start the queue. Redis reponds with an `OK.` Then queue up
+Use the `MULTI` command to start the queue. Redis reponds with an `OK`. Then queue up
 each command. Finally, use `EXEC` to execute the commands. Redis returns a multi-bulk
 reply with each command's return value. In this basic example, we add three values to a 
 list, increment (by 3) a key called 'country-count' and then ask for the range
@@ -69,7 +69,7 @@ are indeed executed, but the rest are not.
 Indeed, M/E is only an 'all or nothing' operation *before* the EXEC command is run
 (that is, during queueing) -- not during the execution. 
 
-Redis does provide an intersting way to deal with issue: the familiar Append-Only 
+Redis does provide an interesting way to deal with issue: the familiar Append-Only 
 File. In the upcoming version of Redis, the commands in the queue are only written
 to the AOF upon successful completion of the EXEC command. So if your server crashes
 mid-EXEC, you can rebuild state according to the previous, pre-EXEC state. 
