@@ -1,8 +1,10 @@
+#The Redis Cookbook
+
 ### Help grow the Redis community with your knowledge!
 
 Contribute your patterns, methods, and ideas to the Redis Cookbook.
 
-### How to Contribute
+### How to Contribute:
 
 1. Fork this repo
 2. Create a new topic branch
