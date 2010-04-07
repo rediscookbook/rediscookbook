@@ -1,5 +1,4 @@
-How to create a web chat (Pieter Noordhuis)
-http://gist.github.com/348262
+[How to create a web chat (Pieter Noordhuis)](http://gist.github.com/348262)
 
 How to track which users are currently online (Luke Melia)
 http://www.lukemelia.com/blog/archives/2010/01/17/redis-in-practice-whos-online/
