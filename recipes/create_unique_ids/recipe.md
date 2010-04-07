@@ -22,3 +22,4 @@ Utilize Redis' built-in atomic INCR function.
 	
 ### Discussion
 
+The use of INCR to provide unique ID's is one of the core concepts in Redis. It is often used in the 'primary key' style, replacing the same functionality used in relational databases.
