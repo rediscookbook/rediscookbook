@@ -1,12 +1,10 @@
 #Create Unique IDs
 
-Problem
--------
+### Problem
 
 You want to atomically provide a unique ID for an arbitrary object.
 
-Solution
---------
+### Solution
 
 Utilize Redis' built-in atomic INCR function.
 
@@ -22,7 +20,5 @@ Utilize Redis' built-in atomic INCR function.
 	$redis-cli GET <another_object_name>
 	2
 	
-
-Discussion
-----------
+### Discussion
 

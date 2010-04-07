@@ -60,16 +60,16 @@ reporting syntax errors whenever a command is added to the queue. For example:
 
 
 Now, M/E does *not* provide complete 'transactions' -- at least not in the ordinary
-sense -- since it does not include 'rollback' functionality. 
+sense -- since it does not include 'rollback' functionality. Consider the following 
+situation. You create a relatively large M/E queue (say, with 200 commands) and run
+EXEC. Before all the queued commands are executed, the server crashes, or perhaps it
+runs out of memory -- let's say that happens at command #148. The first 148 commands
+are indeed executed, but the rest are not. 
 
-Consider the following situation. You create a relatively large M/E queue (say, 
-with 200 commands) and run EXEC. Before all the queued commands are executed, 
-the server crashes, or perhaps it runs out of memory -- let's say that happens
-at command #148. The first 148 commands are indeed executed, but the rest are not. 
-Indeed, M/E is only an 'all or nothing' oepration *before* the EXEC command is run
+Indeed, M/E is only an 'all or nothing' operation *before* the EXEC command is run
 (that is, during queueing) -- not during the execution. 
 
-Redis does provide an intersting  way to deal with issue: the familiar Append-Only 
+Redis does provide an intersting way to deal with issue: the familiar Append-Only 
 File. In the upcoming version of Redis, the commands in the queue are only written
 to the AOF upon successful completion of the EXEC command. So if your server crashes
 mid-EXEC, you can rebuild state according to the previous, pre-EXEC state. 
