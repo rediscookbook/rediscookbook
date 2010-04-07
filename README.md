@@ -4,6 +4,8 @@
 
 Contribute your patterns, methods, and ideas to the Redis Cookbook.
 
+- - -
+
 ### How to Contribute:
 
 1. Fork this repo
