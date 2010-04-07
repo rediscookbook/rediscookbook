@@ -1,4 +1,4 @@
-# Install and Setup Redis using the redis-installer project
+# Easily Install Redis in Multiple Environments
 
 ### Problem
 
