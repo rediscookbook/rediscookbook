@@ -7,8 +7,7 @@ You want to store some arbitrary Ruby objects in Redis.
 
 ### Solution
 
-Use remodel 
-([http://github.com/tlossen/remodel](http://github.com/tlossen/remodel)), 
+Use [remodel](http://github.com/tlossen/remodel), 
 which provides a simple DSL for for describing persistent entities:
 
 	require 'remodel'
@@ -50,6 +49,5 @@ string to store the single associated key. This approach has the
 advantage that associations can be modified without having to (de-)serialize
 any objects.
 
-A different mapping approach is implemented by Ohm 
-([http://github.com/soveran/ohm](http://github.com/soveran/ohm)), 
+A different mapping approach is implemented by [Ohm](http://github.com/soveran/ohm), 
 another Ruby object-redis-mapper. Ohm stores each property under a separate key.
