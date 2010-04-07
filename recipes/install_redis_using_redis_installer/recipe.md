@@ -2,7 +2,8 @@
 
 ### Problem
 
-You want to be able to
+You want to be able to:
+
 * Install Redis on a Linux, OS X, or a similar Posix operating system
 * Use a standardized layout for configurations and binary locations
 * Have a /etc/{init.d,rc.d}/redis system control script when installing as root
