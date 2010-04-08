@@ -4,50 +4,55 @@
 
 You want to store some arbitrary Ruby objects in Redis.
 
-
 ### Solution
 
-Use [remodel](http://github.com/tlossen/remodel), 
-which provides a simple DSL for for describing persistent entities:
+As with any key-value database you can use the key to simulate structure:
 
-	require 'remodel'
-	
-	class Book < Remodel::Entity
-	  has_many :chapters, :class => 'Chapter', :reverse => :book
-	  property :title, :class => 'String'
-	  property :year, :class => 'Integer'
-	end
+    >> redis.set "event:42:name", "Redis Meetup"
+    => "OK"
 
-	class Chapter < Remodel::Entity
-	  has_one :book, :class => Book, :reverse => :chapters
-	  property :title, :class => String
-	end
+    >> redis.get "event:42:name"
+    => "Redis Meetup"
 
-If you store the above as `books.rb` and have Redis running locally, 
-then you can open a ruby shell and do:
+And the same example, but this time generating a unique id first:
 
-	>> require 'books.rb'
-	=> true
-	>> book = Book.create :title => 'Moby Dick', :year => 1851
-	=> #<Book(b:3) title: "Moby Dick", year: 1851>
-	>> chapter = book.chapters.create :title => 'Ishmael'
-	=> #<Chapter(c:4) title: "Ishmael">
-	>> chapter.book
-	=> #<Book(b:3) title: "Moby Dick", year: 1851>
+    >> id = redis.incr "event"
+    => 1
 
+    >> redis.set "event:#{id}:name", "Redis Meetup"
+    => "OK"
 
-### Discussion
+    >> redis.get "event:#{id}:name"
+    => "Redis Meetup"
 
-There are different ways of storing ruby objects in Redis. 
-Remodel, which describes itself as "a minimal object-redis-mapper",
-uses a simple mapping strategy: all properties of an object are
-serialized into a JSON hash, which is stored under a single key.
-Associations are handled differently, though -- both ends of the
-association are stored under separate keys. `has_many` uses a redis
-list to store the keys of associated objects, `has_one` uses a redis
-string to store the single associated key. This approach has the
-advantage that associations can be modified without having to (de-)serialize
-any objects.
+Another approach is to serialize the data you want to store and decode it when you retrieve it:
 
-A different mapping approach is implemented by [Ohm](http://github.com/soveran/ohm), 
-another Ruby object-redis-mapper. Ohm stores each property under a separate key.
+    >> id = redis.incr "event"
+    => 2
+
+    >> redis.set "event:#{id}", {:name => "Redis Meetup"}.to_json
+    => "OK"
+
+    >> JSON.parse redis.get("event:#{id}")
+    => {"name" => "Redis Meetup"}
+
+Yet another approach with recent versions of Redis, is to use the new Hash datatype:
+
+    >> id = redis.incr "event"
+    => 3
+
+    >> redis.hset "event:#{id}", "name", "Redis Meetup"
+    => "OK"
+
+    >> redis.hget "event:#{id}", "name"
+    => "Redis Meetup"
+
+As you can see, Redis is very flexible and lets you decide the best strategy for storing information.
+
+There are some libraries that help you automate the creation of keys based on object attributes. Check them to learn how to use them:
+
+* [DataMapper Adapter](http://github.com/whoahbot/dm-redis-adapter)
+* [Ohm](http://ohm.keyvalue.org)
+* [Redis Model](http://github.com/voloko/redis-model)
+* [Redis Objects](http://github.com/nateware/redis-objects)
+* [Remodel](http://github.com/tlossen/remodel)
