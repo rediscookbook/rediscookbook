@@ -1,4 +1,4 @@
-# Install and Setup Redis On Any POSIX System
+# Install Redis With make
 
 ### Problem
 
