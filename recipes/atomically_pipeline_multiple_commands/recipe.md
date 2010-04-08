@@ -40,7 +40,7 @@ If necessary, the DISCARD command can be used to clear the MULTI queue and exit 
 
 ### Discussion
 
-MULTI/EXEC, which was added in Redis 2.0, is an extremely important component of 
+MULTI/EXEC, which will be added in Redis 2.0, is an extremely important component of 
 Redis and merits a good deal of discussion. It is important to know what it 
 does -- and what it does not do.
 
