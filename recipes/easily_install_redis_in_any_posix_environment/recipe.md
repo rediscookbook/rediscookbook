@@ -12,7 +12,7 @@ You want to be able to:
 
 ### Solution
 
-Use [redis-installer](git://github.com/wayneeseguin/redis-installer/).
+Use [redis-installer](http://github.com/wayneeseguin/redis-installer/).
 
 1. Installing on localhost:
 
