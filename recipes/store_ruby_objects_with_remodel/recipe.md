@@ -2,7 +2,7 @@
 
 ### Problem
 
-You want to store some arbitrary Ruby objects in Redis.
+You want to store Ruby objects in Redis, using remodel.
 
 
 ### Solution

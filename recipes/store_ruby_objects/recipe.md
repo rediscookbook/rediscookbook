@@ -6,7 +6,7 @@ You want to store some arbitrary Ruby objects in Redis.
 
 ### Solution
 
-As with any key-value database you can use the key to simulate structure:
+As with any key-value database, you can use the key to simulate structure:
 
     >> redis.set "event:42:name", "Redis Meetup"
     => "OK"
@@ -14,7 +14,7 @@ As with any key-value database you can use the key to simulate structure:
     >> redis.get "event:42:name"
     => "Redis Meetup"
 
-And the same example, but this time generating a unique id first:
+And the same example, but this time generating a unique ID first:
 
     >> id = redis.incr "event"
     => 1
@@ -36,7 +36,7 @@ Another approach is to serialize the data you want to store and decode it when y
     >> JSON.parse redis.get("event:#{id}")
     => {"name" => "Redis Meetup"}
 
-Yet another approach with recent versions of Redis, is to use the new Hash datatype:
+Yet another approach, available in recent versions of Redis, is to use the new Hash datatype:
 
     >> id = redis.incr "event"
     => 3
