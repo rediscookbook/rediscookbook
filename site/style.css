@@ -5,19 +5,18 @@ body {
 }
 
 hr {
-border: none 0; 
+	border: none 0; 
 	border-top: 3px double #c00;
 	width: 80%;
 	height: 3px;
 	margin: 10px auto 0 0;
 	text-align: left;
-	}	
+}	
 
 a {
 
 	text-decoration: none;
 	color: #3471CD;
-
 }
 
 li {
@@ -25,18 +24,13 @@ li {
 	list-style-type:square;
 }
 
-
-strong {
-}
-
 .spacer {
 	margin-left: 80px;
 }
 
 a:hover {
-
 	text-decoration: underline;
-	color: #566988;
+	color: #3471CD;
 }
 
 
@@ -52,27 +46,25 @@ a:hover {
 }
 
 .header a {
-		text-decoration: none;
+	text-decoration: none;
 }
 
 .wrapper {
-
 	width: 900px;
 	margin-top:40px;
 	margin-bottom:100px;
 
 }
 
-.main {
+.main	{
 	float:left;
 	padding-left: 100px;
-	width: 600px;
+	width: 750px;
 }
 
-hr {
+hr	 {
 	size: 100%;
 	border-top: 1px dotted #999;
-
    }
 
 
@@ -80,19 +72,13 @@ hr {
 	clear: both;
 	padding-left: 100px;
 	padding-top: 25px;
-	border-top:2px solid #999;
-
-	
+	border-top:2px solid #999;	
 }
-
-
 
 h1 {
 	font-size: 30px;
 	color: #6686BD;
 	text-shadow: 1px 1px 1px #000;
-
-
 }
 
 h2 {
@@ -104,11 +90,9 @@ h3 {
 	font-size:14px;
 }
 
-
 h4 {
 	font-size:16px;
 }
-
 
 p {
 	font-size: 14px;
