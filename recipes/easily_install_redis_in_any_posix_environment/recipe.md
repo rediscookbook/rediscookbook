@@ -24,7 +24,9 @@ Next, actually install Redis:
 
 	bin/install-redis
 
-2. Installing on localhost with **one** command -- "I am not lazy, I am efficient!"
+2. Installing on localhost with **one** command
+
+"I am not lazy, I am efficient!"
 
 	bash < <(curl http://github.com/wayneeseguin/redis-installer/raw/master/bin/install-redis)
 
