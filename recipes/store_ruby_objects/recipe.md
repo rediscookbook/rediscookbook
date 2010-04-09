@@ -52,7 +52,7 @@ As you can see, Redis is very flexible and lets you decide the best strategy for
 There are some libraries that help you automate the creation of keys based on object attributes. Check them to learn how to use them:
 
 * [DataMapper Adapter](http://github.com/whoahbot/dm-redis-adapter)
+* [Ohm](http://ohm.keyvalue.org)
 * [Redis Model](http://github.com/voloko/redis-model)
 * [Redis Objects](http://github.com/nateware/redis-objects)
 * [Remodel](http://github.com/tlossen/remodel)
-* [Ohm](http://ohm.keyvalue.org)
