@@ -1,4 +1,5 @@
 ---
+title: Atomically GET and Delete Data from Redis
 credit:
   - Gleicon Moraes
 tags:

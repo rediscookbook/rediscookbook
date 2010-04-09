@@ -1,9 +1,0 @@
-<h2>Welcome to the Redis Cookbook &#151; a brand-new community resource. <br /> How-to's, guides, and more &#151; powered by your recipes.</h2>
-<h3>Initial Recipes</h3>
-
-
-<ul>
-  <% recipes.each do |recipe| %>
-    <li><a href="<%= recipe %>"><%= recipe.sub('.html', '').split('_').map { |x| x.capitalize }.join(' ') %></a></li>
-  <% end %>
-</ul>

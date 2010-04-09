@@ -1,5 +1,3 @@
-#Atomically GET and Delete Data from Redis
-
 ### Problem
 
 You want to atomically GET and then DELETE an object from Redis.
