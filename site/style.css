@@ -21,8 +21,10 @@ a {
 }
 
 li {
-	list-style-type:none;
+	list-style-image:url("icon1.png");
+	list-style-type:square;
 }
+
 
 strong {
 }
@@ -86,7 +88,7 @@ hr {
 
 
 h1 {
-	font-size: 38px;
+	font-size: 30px;
 	color: #6686BD;
 	text-shadow: 1px 1px 1px #000;
 
