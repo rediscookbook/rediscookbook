@@ -78,6 +78,9 @@ hr {
 	clear: both;
 	padding-left: 100px;
 	padding-top: 25px;
+	border-top:2px solid #999;
+
+	
 }
 
 
@@ -85,7 +88,7 @@ hr {
 h1 {
 	font-size: 38px;
 	color: #6686BD;
-	text-shadow: 2px 2px 2px #000;
+	text-shadow: 1px 1px 1px #000;
 
 
 }
