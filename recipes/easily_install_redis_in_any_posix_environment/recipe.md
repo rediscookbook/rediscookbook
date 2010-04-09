@@ -24,9 +24,7 @@ Next, actually install Redis:
 
 	bin/install-redis
 
-2. Installing on localhost with **one** command 
-
-"I am not lazy, I am efficient!"
+2. Installing on localhost with **one** command -- "I am not lazy, I am efficient!"
 
 	bash < <(curl http://github.com/wayneeseguin/redis-installer/raw/master/bin/install-redis)
 
@@ -45,3 +43,4 @@ Next, install Redis on one or more remote hosts
 Note that installation and configuration is different based on whether you install as root or install as user. For root, it installs Redis to /usr/local/ and for a user it installs to ~/.redis/
 
 Solution 2 simply downloads the Redis installer script, and feeds it directly into `bash` to execute the commands.
+
