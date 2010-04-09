@@ -1,4 +1,4 @@
-#Atomically GET and DELETE data from Redis
+#Atomically GET and Delete Data from Redis
 
 ### Problem
 
