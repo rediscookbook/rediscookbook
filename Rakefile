@@ -1,31 +1,32 @@
 require 'rubygems'
 require 'rdiscount'
-require 'erb'
+require 'liquid'
 
-task :default => [:build]
-
-task :build do
+task :default do
+  # cleanup
   `rm -rf www; mkdir www; cp site/*.css www`
-
-  layout = ERB.new(open('site/layout.erb').read())
   
   # generate recipe pages
+  layout = Liquid::Template.parse(open('site/layout.liquid').read())
   recipes = Dir['recipes/*/recipe.md'].map do |source|
+    next if source =~ /a_sample_recipe/
     dest = source.sub('recipes', 'www').sub('/recipe.md', '.html')
-    puts "-- #{dest}"
+    puts dest
     open(dest, 'w') do |out|
       content = RDiscount.new(open(source).read()).to_html
-      out.write layout.result(binding)
+      out.write layout.render('content' => content)
     end
-    dest.split('/').last
-  end
+    recipe = dest.split('/').last
+    title = recipe.sub('.html', '').split('_').map { |x| x.capitalize }.join(' ')
+    { 'title' => title, 'href' => recipe }
+  end.compact
   
   # generate index page
+  index = Liquid::Template.parse(open('site/index.liquid').read())
   dest = 'www/index.html'
-  puts "-- #{dest}"
+  puts dest
   open(dest, 'w') do |out|
-    index = ERB.new(open('site/index.erb').read())
-    content = index.result(binding)
-    out.write layout.result(binding)
+    content = index.render('recipes' => recipes)
+    out.write layout.render('content' => content)
   end
 end
