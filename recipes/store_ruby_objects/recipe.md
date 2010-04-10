@@ -1,5 +1,3 @@
-# How to Store Ruby Objects
-
 ### Problem
 
 You want to store some arbitrary Ruby objects in Redis.

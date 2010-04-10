@@ -1,5 +1,3 @@
-# Implement a Simple FIFO Queue
-
 ### Problem
 
 You want to use Redis to implement a simple abstract first-in, first-out

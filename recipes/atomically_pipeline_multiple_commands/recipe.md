@@ -1,5 +1,3 @@
-# How to Atomically Pipeline Multiple Commands
-
 ### Problem
 
 You want to execute several Redis commands with a single atomic command.

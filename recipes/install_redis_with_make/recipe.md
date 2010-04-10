@@ -1,5 +1,3 @@
-# Install Redis With make
-
 ### Problem
 
 You want to install Redis on Linux, OS X, or a similar Posix operating system.

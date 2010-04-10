@@ -1,5 +1,3 @@
-# Easily Install Redis in Multiple Environments
-
 ### Problem
 
 You want to be able to:

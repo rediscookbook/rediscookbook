@@ -1,0 +1,8 @@
+---
+title: Empty the Database
+credit:
+  - Tim Lossen
+tags: 
+  - basic
+  - FLUSHALL
+  - FLUSHDB

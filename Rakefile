@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'rdiscount'
 require 'liquid'
+require 'yaml'
 
 task :default do
   # cleanup
@@ -10,23 +11,21 @@ task :default do
   layout = Liquid::Template.parse(open('site/layout.liquid').read())
   recipes = Dir['recipes/*/recipe.md'].map do |source|
     next if source =~ /a_sample_recipe/
-    dest = source.sub('recipes', 'www').sub('/recipe.md', '.html')
-    puts dest
+    meta = YAML.load(open(source.sub('/recipe.md', '/meta.yml')).read())
+    puts dest = source.sub('recipes', 'www').sub('/recipe.md', '.html')
     open(dest, 'w') do |out|
       content = RDiscount.new(open(source).read()).to_html
-      out.write layout.render('content' => content)
+      out.write layout.render('meta' => meta, 'content' => content)
     end
-    recipe = dest.split('/').last
-    title = recipe.sub('.html', '').split('_').map { |x| x.capitalize }.join(' ')
-    { 'title' => title, 'href' => recipe }
+    { 'title' => meta['title'], 'href' => dest.split('/').last }
   end.compact
   
   # generate index page
   index = Liquid::Template.parse(open('site/index.liquid').read())
-  dest = 'www/index.html'
-  puts dest
+  puts dest = 'www/index.html'
   open(dest, 'w') do |out|
     content = index.render('recipes' => recipes)
-    out.write layout.render('content' => content)
+    meta = { 'title' => 'Recipes' }
+    out.write layout.render('meta' => meta, 'content' => content)
   end
 end

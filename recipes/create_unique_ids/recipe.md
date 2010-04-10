@@ -1,5 +1,3 @@
-#Create Unique IDs
-
 ### Problem
 
 You want to atomically provide a unique ID for an arbitrary object.
