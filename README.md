@@ -17,9 +17,11 @@ Contribute your patterns, methods, and ideas to the Redis Cookbook.
 
 You can:
 
-* Add example code for any existing recipe, in any programming language. Fork the repo and add your code into the relevant directory!
+* Add example code for any existing recipe, in any programming language. 
+  Fork the repo and add your code into the relevant directory!
 * Work on the rediscookbook.org website. The site itself is open source and lives in `site.`
-* Look for typos, formatting errors, missing links, and other little things. No potential improvement is 'too small' -- fork for anything.
+* Look for typos, formatting errors, missing links, and other little things. 
+  No potential improvement is 'too small' -- fork for anything.
 
 ### Your hosts
 
