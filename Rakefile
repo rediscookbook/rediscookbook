@@ -9,15 +9,15 @@ task :default do
   
   # generate recipe pages
   layout = Liquid::Template.parse(open('site/layout.liquid').read())
-  recipes = Dir['recipes/*/recipe.md'].map do |source|
-    next if source =~ /a_sample_recipe/
+  recipes = Dir['recipes/*/*/recipe.md'].map do |source|
     meta = YAML.load(open(source.sub('/recipe.md', '/meta.yml')).read())
-    puts dest = source.sub('recipes', 'www').sub('/recipe.md', '.html')
+    name = source.split('/')[-2] + '.html'
+    puts dest = "www/#{name}"
     open(dest, 'w') do |out|
       content = RDiscount.new(open(source).read()).to_html
       out.write layout.render('meta' => meta, 'content' => content)
     end
-    { 'title' => meta['title'], 'href' => dest.split('/').last }
+    { 'title' => meta['title'], 'href' => name }
   end.compact
   
   # generate index page
