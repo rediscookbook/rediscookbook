@@ -25,7 +25,6 @@ p {
 h1 {
   font-size: 30px;
   color: #6686BD;
-  text-shadow: 1px 1px 1px #000;
 }
 
 h2 {
@@ -75,20 +74,18 @@ body pre {
   width: 750px;
 }
 
-.credit li {
-  list-style-type: none;
+.credit {
   font-style: italic;
 }
 
-.content li {
+.index li {
   list-style-image: url("/img/icon1.png");
   list-style-type: square;
 }
 
 .footer {
   clear: both;
-  padding-left: 100px;
-  padding-top: 25px;
+  padding: 25px 0 30px 100px;
   border-top: 2px solid #999;	
   height: 40px;
 }

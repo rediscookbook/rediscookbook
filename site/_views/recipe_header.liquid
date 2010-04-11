@@ -1,0 +1,6 @@
+<h1>{{ meta.title }}</h1>
+
+<div class='credit'>
+  Credit: {% for name in meta.credit %}{{ name }}{% unless forloop.last %}, {% endunless %}{% endfor %}
+</div>
+

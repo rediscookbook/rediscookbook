@@ -14,43 +14,12 @@ and instead use a very simple domain-specific language to achieve similar result
 Consider the following example in Ohm. Here, we'll model three arbitrary objects (an Event, a
 Venue, and a Person), and provide validations for the Event.
 
-	class Event < Ohm::Model
-  	  attribute :name
-  	  reference :venue, Venue
-  	  set :participants, Person
-  	  counter :votes
-
- 	  index :name
-
-   	  def validate
-   	    assert_present :name
-	  end
-	end
-
-	class Venue < Ohm::Model
-  	  attribute :name
-  	  collection :events, Event
-	end
-
-	class Person < Ohm::Model
- 	 attribute :name
-	end
+{% code_snippet ohm.rb %}
  
 The Ruby libraries also employ a simple style to model associations. Here is an example of how to create a 
 familiar 'has_many' relationship, using remodel.
 
-	require 'remodel'
-	
-	class Cookbook < remodel::Entity
-	  has_many :recipes, :class => 'Recipe', :reverse => :book
-	  property :title, :class => String
-	  property :author, :class => String
-	end
-	
-	class Recipe < remodel::Entity
-	  has_one :book, :class => Cookbook, :reverse => :recipes
-	  property :name, :class => String
-	end
+{% code_snippet remodel.rb %}
 
 If you store the above as `cookbook.rb` and have Redis running locally, 
 then you can open a Ruby shell and do:
