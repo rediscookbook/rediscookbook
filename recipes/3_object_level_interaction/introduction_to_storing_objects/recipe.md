@@ -1,10 +1,11 @@
 ### Problem
 
-You want to store some arbitrary Ruby objects in Redis.
+You want to store some arbitrary objects in Redis.
 
 ### Solution
 
-As with any key-value database, you can use the key to simulate structure:
+As with any key-value database, you can use the key to simulate structure. Here's an example using 
+Ruby, but the principle can be used in any programming language.
 
     >> redis.set "event:42:name", "Redis Meetup"
     => "OK"
@@ -54,3 +55,8 @@ There are some libraries that help you automate the creation of keys based on ob
 * [Redis Model](http://github.com/voloko/redis-model)
 * [Redis Objects](http://github.com/nateware/redis-objects)
 * [Remodel](http://github.com/tlossen/remodel)
+
+### See Also
+
+Check out **Using a Ruby Library to Store Objects** to see options in Ruby, and strategies used by
+various libraries. 
