@@ -41,6 +41,18 @@ h4 {
   font-size:14px;
 }
 
+body code { 
+  color: #444; 
+  font-size: 120%; 
+}
+
+body pre { 
+  white-space: pre-wrap; 
+  white-space: -moz-pre-wrap !important;
+  padding: 1em;
+  border: 4px solid #dfe2e5; 
+}
+
 .header {
   padding-top: 20px;
   padding-left: 100px;
