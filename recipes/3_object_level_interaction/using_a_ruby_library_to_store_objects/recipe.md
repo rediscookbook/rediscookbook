@@ -5,8 +5,7 @@ You want to use an open source library to persist Ruby objects.
 ### Solution
 
 Explore your options and pick one! There exist several libraries to store and persist objects in Ruby. 
-In the following recipe, we'll use  Ohm and remodel as examples, but the reader should
-note that there are several good libraries that can be used for this purpose. 
+In the following recipe, we'll use [Ohm](http://github.com/soveran/ohm) and [remodel](http://github.com/tlossen/remodel) as examples, but the reader should note that there are several good libraries that can be used for this purpose. 
 [Please add more library examples with other libraries.]
 
 A general abstraction strategy is to map objects without complicated schema definitions,
