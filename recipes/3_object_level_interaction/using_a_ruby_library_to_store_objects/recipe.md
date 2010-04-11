@@ -73,7 +73,7 @@ can be used for the `format` validation:
 
 	assert_format :username, /^\w+$/
 
-There are various strategies for storing object propoerties. For example, in remodel, 
+There are various strategies for storing object properties. For example, in remodel, 
 all properties of an object are serialized into a JSON hash, which is stored under a
 single key. Associations are handled differently, though &mdash; both ends of the
 association are stored under separate keys. `has_many` uses a Redis
@@ -81,4 +81,3 @@ list to store the keys of associated objects, `has_one` uses a Redis
 string to store the single associated key. 
 
 ### See Also
-
