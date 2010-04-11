@@ -5,8 +5,8 @@ r.get("place:100:name")
 # > "Spain"
 
 id = r.incr("name_ids")
-r.set("person: %s:name" %id, "Donald Knuth")
-r.get("person: %s:name" %id)
+r.set("person:%s:name" %id, "Donald Knuth")
+r.get("person:%s:name" %id)
 # > "Donald Knuth"
 
 
