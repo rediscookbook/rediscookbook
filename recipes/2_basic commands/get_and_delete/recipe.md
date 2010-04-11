@@ -25,10 +25,10 @@ return value
         (integer) 1
         >> GET TOTO
         (nil)
-
-
 	
 ### Discussion
 
 This is a simple one, but makes good use of Redis' atomic features. GET and DEL benefit from the RENAME function in order to keep other clients from reading the object data between operations.
+
+### See Also
 

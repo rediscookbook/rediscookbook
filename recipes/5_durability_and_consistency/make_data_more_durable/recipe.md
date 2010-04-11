@@ -20,7 +20,6 @@ tradeoff between durability and speed. These configurations can be set in `redis
 
 The three options are to force a sync every command, sync every second, or never force a sync (that is, leave the process up to the operating system). Redis' default is the sync on every command; however, this will be quite slow. The second option is usually a fair trade-off between safety and speed.
 
-
-
+### See Also
 
 

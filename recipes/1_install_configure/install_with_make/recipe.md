@@ -15,4 +15,4 @@ Salvatore Sanfilippo, the creator of Redis, is a strong proponent of a 'zero-con
 install philosophy. Indeed, Redis has no hard dependencies. We've even timed how long it takes
 to go from "download to server interaction": 34 seconds at last check. 
 
-
+### See Also
