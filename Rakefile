@@ -4,11 +4,14 @@ require 'liquid'
 require 'yaml'
 
 task :default do
-  # cleanup
-  `rm -rf www; mkdir www; cp site/*.css www`
+  # copy static stuff
+  `rm -rf www
+  mkdir www
+  cp -r site/* www
+  rm -rf www/_*`
   
   # generate recipe pages
-  layout = Liquid::Template.parse(open('site/layout.liquid').read())
+  layout = Liquid::Template.parse(open('site/_views/layout.liquid').read())
   recipes = Dir['recipes/*/*/recipe.md'].map do |source|
     meta = YAML.load(open(source.sub('/recipe.md', '/meta.yml')).read())
     name = source.split('/')[-2] + '.html'
@@ -21,7 +24,7 @@ task :default do
   end.compact
   
   # generate index page
-  index = Liquid::Template.parse(open('site/index.liquid').read())
+  index = Liquid::Template.parse(open('site/_views/index.liquid').read())
   puts dest = 'www/index.html'
   open(dest, 'w') do |out|
     content = index.render('recipes' => recipes)
