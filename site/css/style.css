@@ -46,7 +46,7 @@ h4 {
   padding-left: 100px;
   top: 0px;
   height: 100px;
-  background-image:url('img/bg3.png');
+  background-image:url('/img/bg3.png');
   background-color: #B30415;
   border-bottom:2px solid #999;
 }
@@ -69,7 +69,7 @@ h4 {
 }
 
 .content li {
-  list-style-image: url("img/icon1.png");
+  list-style-image: url("/img/icon1.png");
   list-style-type: square;
 }
 

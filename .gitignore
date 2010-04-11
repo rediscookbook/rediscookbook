@@ -1,5 +1,5 @@
-dump.rdb
 *~
 *.pyc
 *.swp
-www/*
+dump.rdb
+public/*

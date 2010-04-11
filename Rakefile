@@ -5,17 +5,17 @@ require 'yaml'
 
 task :default do
   # copy static stuff
-  `rm -rf www
-  mkdir www
-  cp -r site/* www
-  rm -rf www/_*`
+  `rm -rf public
+  mkdir public
+  cp -r site/* public
+  rm -rf public/_*`
   
   # generate recipe pages
   layout = Liquid::Template.parse(open('site/_views/layout.liquid').read())
   recipes = Dir['recipes/*/*/recipe.md'].map do |source|
     meta = YAML.load(open(source.sub('/recipe.md', '/meta.yml')).read())
     name = source.split('/')[-2] + '.html'
-    puts dest = "www/#{name}"
+    puts dest = "public/#{name}"
     open(dest, 'w') do |out|
       content = RDiscount.new(open(source).read()).to_html
       out.write layout.render('meta' => meta, 'content' => content)
@@ -25,7 +25,7 @@ task :default do
   
   # generate index page
   index = Liquid::Template.parse(open('site/_views/index.liquid').read())
-  puts dest = 'www/index.html'
+  puts dest = 'public/index.html'
   open(dest, 'w') do |out|
     content = index.render('recipes' => recipes)
     meta = { 'title' => 'Recipes' }
