@@ -46,10 +46,9 @@ body code {
 }
 
 body pre { 
-  white-space: pre-wrap; 
-  white-space: -moz-pre-wrap !important;
   padding: 1em;
   border: 4px solid #dfe2e5; 
+  overflow-x: auto;
 }
 
 .header {
