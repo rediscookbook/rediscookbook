@@ -4,13 +4,17 @@ You want to atomically GET and then DELETE an object from Redis.
 
 ### Solution
 
-new_key = RENAME key key:tmp
+success = RENAME key key:tmp
 
-value = GET key:tmp
+if success
 
-DELETE key:tmp
+  value = GET key:tmp
 
-return value
+  DELETE key:tmp
+
+  return value
+
+end
 
 
         SET TOTO 1
@@ -23,12 +27,15 @@ return value
         1
         >> DEL TOTO:TMP
         (integer) 1
+
         >> GET TOTO
         (nil)
-	
+        >> RENAME TOTO TOTO:TMP
+        (error) ERR no such key
+
 ### Discussion
 
-This is a simple one, but makes good use of Redis' atomic features. GET and DEL benefit from the RENAME function in order to keep other clients from reading the object data between operations.
+This is a simple one, but makes good use of Redis' atomic features. The RENAME function will succeed for first caller, subsequent callers will fail because the key was already renamed. GET and DEL benefit from the RENAME function in order to keep other clients from reading the object data between operations.
 
 ### See Also
 
