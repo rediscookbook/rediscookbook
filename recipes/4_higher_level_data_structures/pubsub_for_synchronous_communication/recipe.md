@@ -93,3 +93,6 @@ easily identified.
 
 Check out **Atomically Pipeline Multiple Commands** to see how the order of messages
 is preserved in persisting them by using `MULTI`/`EXEC`.
+
+For a working example on publish/subscribe in Redis, see
+[this Gist](http://gist.github.com/348262).
