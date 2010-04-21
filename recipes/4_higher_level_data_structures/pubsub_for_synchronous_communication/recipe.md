@@ -10,9 +10,10 @@ Use the Redis built-in commands `PUBLISH` and `SUBSCRIBE`. These commands
 use the concept of channels. A client is able to PUBLISH messages on
 any channel as well as `SUBSCRIBE` to any channel to receive messages.
 Channels have a one-to-many relation. This means that a message that is
-`PUBLISH`'ed against a channel is received by every subscriber.
+`PUBLISH`'ed against a channel is received by every subscriber of that
+channel.
 
-When a client issues a `SUBSCRIBE` command, it cannot issue other commands
+When a client issues a `SUBSCRIBE` command, it cannot issue commands other
 than `SUBSCRIBE` and `UNSUBSCRIBE` until it is no longer subscribed to any
 channel. This means that it is important to think about how your
 application handles Redis connections. The easiest approach is to create
@@ -56,7 +57,7 @@ development version of Redis until 2.0 is released.
 
 ### Variants
 
-#### Persisting messages
+#### Persisting Messages
 
 In the scenario of a web chat, it is not unlikely you want to persist the
 messages that were `PUBLISH`'ed. One way to implement this is to store
@@ -73,10 +74,10 @@ you could choose to use a sorted set. When the message timestamp is used
 as the score, you can easily retrieve all messages that were sent in a
 given time frame, using `ZRANGEBYSCORE`.
 
-#### Big brother
+#### Big Brother
 
-Consider you need to have a way of monitoring all channels in your application.
-One way to implement this, is to add a control channel that is used to
+Perhaps you need to have a way of monitoring all channels in your application.
+One way to implement this is to add a control channel that is used to
 announce new channels being `SUBSCRIBE`'d to and unused channels being
 `UNSUBSCRIBE`'d from. However, this method is costly and requires unnecessary
 logic in your application. To solve this, you can use the `PSUBSCRIBE` command.
@@ -91,8 +92,8 @@ easily identified.
 
 ### See Also
 
-Check out **Atomically Pipeline Multiple Commands** to see how the order of messages
-is preserved in persisting them by using `MULTI`/`EXEC`.
+Check out **Atomically Pipeline Multiple Commands** to see how the order of 
+messages is preserved in persisting them by using `MULTI`/`EXEC`.
 
 For a working example on publish/subscribe in Redis, see
 [this Gist](http://gist.github.com/348262).
