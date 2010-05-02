@@ -18,7 +18,7 @@ Utilize Redis' built-in atomic INCR function.
 	$redis-cli GET <next_object_id>
 	2
 		
-	$redis-cli GET <another_next_object_Id>
+	$redis-cli GET <another_next_object_id>
 	1
 	
 ### Discussion
