@@ -6,19 +6,19 @@ You want to atomically provide a unique ID for an arbitrary object.
 
 Utilize Redis' built-in atomic INCR function.
 
-	$redis-cli INCR <an_object_name>
+	$redis-cli INCR <next_object_id>
 	(integer) 1
 
-    $redis-cli INCR <an_object_name>
+    $redis-cli INCR <next_object_id>
     (integer) 2
 
-	$redis-cli INCR <another_object_name>
+	$redis-cli INCR <another_next_object_id>
 	(integer) 1
 
-	$redis-cli GET <an_object_name>
+	$redis-cli GET <next_object_id>
 	2
 		
-	$redis-cli GET <another_object_name>
+	$redis-cli GET <another_next_object_Id>
 	1
 	
 ### Discussion
