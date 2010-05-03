@@ -39,5 +39,39 @@ because the key was already renamed. GET and DEL benefit from the RENAME
 function in order to keep other clients from reading the object data between
 operations.
 
+This is potentially dangerous.
+
+### Problems with the solution proposed above
+
+If the execution is interrupted in line 2 (if success) or 3 (value = GET key:tmp) then that key stays renamed as key:tmp for good in the database.
+
+### Real atomic solution
+
+in pseudocode:
+
+	MULTI
+	value = GET key
+	DELETE key
+	EXEC	
+	return value
+
+using `redis-cli`:
+
+	redis> SET TOTO 1
+	OK
+	redis> GET TOTO
+	1
+	redis> MULTI
+	OK
+	redis> GET TOTO
+	QUEUED
+	redis> DEL TOTO
+	QUEUED
+	redis> EXEC
+	1. 1
+	2. (integer) 1
+	redis> GET TOTO
+	(nil)
+	
 ### See Also
 
