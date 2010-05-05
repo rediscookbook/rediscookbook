@@ -24,7 +24,7 @@ p {
 
 h1 {
   font-size: 30px;
-  color: #6686BD;
+  color: red;
 }
 
 h2 {
@@ -87,4 +87,5 @@ body pre {
   padding: 25px 0 30px 100px;
   border-top: 2px solid #999;	
   height: 40px;
+  font-size: 12px;
 }
