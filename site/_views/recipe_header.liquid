@@ -4,3 +4,6 @@
   Credit: {% for name in meta.credit %}{{ name }}{% unless forloop.last %}, {% endunless %}{% endfor %}
 </div>
 
+<div class='tags'>
+  Tags: {% for tag in meta.tags %}<a href="/tag/{{ tag | slugify }}.html">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}
+</div>

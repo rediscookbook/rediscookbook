@@ -1,0 +1,8 @@
+<h1>Recipes for tag "{{ tag }}"</h1>
+<p>Recipes tagged <strong>{{ tag }}</strong>:</p>
+
+<ul class='index'>
+  {% for recipe in recipes %}
+    <li><a href="{{ recipe.href }}">{{ recipe.title }}</a></li>
+  {% endfor %}
+</ul>

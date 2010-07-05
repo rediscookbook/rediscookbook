@@ -77,6 +77,11 @@ body pre {
   font-style: italic;
 }
 
+.tags {
+  font-style: italic;
+  margin-top: 10px;
+}
+
 .index li {
   list-style-image: url("/img/icon1.png");
   list-style-type: square;
