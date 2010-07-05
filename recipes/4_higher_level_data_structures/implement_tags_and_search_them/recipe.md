@@ -51,13 +51,13 @@ computing
 * (d) excludes all books tagged haskell from the programming group.
 
 For a document based storage and search, check meta code at 
-http://github.com/gleicon/docdb. It may look overkill, but after some 
+<http://github.com/gleicon/docdb>. It may look overkill, but after some 
 documents, the number of sets doesnt grow that much.
   
 ### See Also
 
-* http://www.slideshare.net/gleicon/redis-3025589
-* http://docs.python.org/library/sets.html
-* http://en.wikipedia.org/wiki/Stemming
-* http://tartarus.org/~martin/PorterStemmer/
+* <http://www.slideshare.net/gleicon/redis-3025589>
+* <http://docs.python.org/library/sets.html>
+* <http://en.wikipedia.org/wiki/Stemming>
+* <http://tartarus.org/~martin/PorterStemmer/>
 
