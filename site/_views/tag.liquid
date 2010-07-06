@@ -3,6 +3,6 @@
 
 <ul class='index'>
   {% for recipe in recipes %}
-    <li><a href="{{ recipe.href }}">{{ recipe.title }}</a></li>
+    <li><a href="/{{ recipe.href }}">{{ recipe.title }}</a></li>
   {% endfor %}
 </ul>
