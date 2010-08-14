@@ -1,7 +1,7 @@
 ### Problem
 
 You want Redis to serve as the backend for an application that needs chat
-like communication (or arbitrary synchronous communication) between its
+like communication (or arbitrary asynchronous communication) between its
 users.
 
 ### Solution
@@ -47,7 +47,7 @@ the Redis connection pool.
 
 When implementing `PUBLISH`/`SUBSCRIBE` in a web environment, the easiest
 approach to use is to use [Web Sockets](http://en.wikipedia.org/wiki/Web_Sockets).
-Using WebSockets, you are able to leverage the synchronous nature of
+Using WebSockets, you are able to leverage the asynchronous nature of
 `PUBLISH`/`SUBSCRIBE` and immediately write incoming messages on the
 subscribed channels to the user's specific Web Socket.
 

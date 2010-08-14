@@ -21,11 +21,29 @@ end
 
 Liquid::Template.register_tag('code_snippet', CodeSnippet)
 
+# slugify method for strings
+class String
+  def slugify
+    slug = self.downcase.gsub(/'/, '').gsub(/[^a-z0-9]+/, '_')
+    slug = slug.chop! if slug =~ /_$/ 
+    return slug
+  end
+end
 
+# custom liquid filter
+module SlugifyFilter
+  def slugify(input)
+    input.slugify
+  end
+end
+
+Liquid::Template.register_filter(SlugifyFilter)
+
+# default task
 task :default do
   # copy static stuff
   `rm -rf public
-  mkdir public
+  mkdir -p public/tag
   cp -r site/* public
   rm -rf public/_*`
 
@@ -43,10 +61,31 @@ task :default do
         markdown = recipe.render('meta' => meta)
         content = RDiscount.new(markdown).to_html
         out.write layout.render('meta' => meta, 'content' => content)
-        { 'title' => meta['title'], 'href' => name }
+        { 'title' => meta['title'], 'href' => name, 'tags' => meta['tags'] }
       end
     end
   end.compact
+
+  # generate tag pages
+  tags_dict = Hash.new
+  recipes.each do |recipe|
+    recipe['tags'].each do |tag|
+      if not tags_dict.keys.include? tag
+        tags_dict[tag] = Array.new
+      end
+      tags_dict[tag] << recipe
+    end
+  end
+
+  tags_dict.keys.each do |tag|
+    puts dest = "public/tag/#{tag.slugify}.html"
+    recipes_for_tag = tags_dict[tag]
+    open(dest, 'w') do |out|
+      tag_page = Liquid::Template.parse(open('site/_views/tag.liquid').read())
+      out.write layout.render('content' => tag_page.render(
+        'tag' => tag, 'recipes' => recipes_for_tag))
+    end
+  end
   
   # generate index page
   puts dest = 'public/index.html'
