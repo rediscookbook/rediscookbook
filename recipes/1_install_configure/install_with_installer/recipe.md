@@ -10,9 +10,9 @@ You want to be able to:
 
 ### Solution
 
-Use [redis-installer](http://github.com/wayneeseguin/redis-installer/). With redis-installer, you can install on localhost in two commands, install on localhost with just one command, or easily install Redis into multiple environments. Here's how to do each: 
+Use [redis-installer](https://github.com/wayneeseguin/redis-installer/). With redis-installer, you can install on localhost in two commands, install on localhost with just one command, or easily install Redis into multiple environments. Here's how to do each:
 
-To install on localhost, first, download and/or clone the redis-installer: 
+To install on localhost, first, download and/or clone the redis-installer:
 
 	git clone git://github.com/wayneeseguin/redis-installer/
 
@@ -20,10 +20,10 @@ Next, actually install Redis:
 
 	bin/install-redis
 
-To install on localhost with just one command, use this simple `bash` 
+To install on localhost with just one command, use this simple `bash`
 one-liner. Repeat: "I am not lazy, I am efficient!"
 
-	bash < <(curl http://github.com/wayneeseguin/redis-installer/raw/master/bin/install-redis)
+	bash < <(curl https://github.com/wayneeseguin/redis-installer/raw/master/bin/install-redis)
 
 Finally, to install on multiple remote hosts, download and/or clone the redis-installer:
 
