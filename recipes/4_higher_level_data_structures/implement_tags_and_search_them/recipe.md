@@ -10,7 +10,7 @@ as 'tags'
 
 In redis-cli:
 
-    SET book:1 {'title' : 'Diving into Python',
+    SET book:1 {'title' : 'Dive into Python',
     'author': 'Mark Pilgrim'}
     SET book:2 { 'title' : 'Programing Erlang',
     'author': 'Joe Armstrong'}
