@@ -21,7 +21,7 @@ In redis-cli:
     SADD tag:erlang 2
     SADD tag:haskell 3
     SADD tag:programming 1 2 3
-    SADD tag computing 1 2 3
+    SADD tag:computing 1 2 3
     SADD tag:distributedcomputing 2
     SADD tag:FP 2 3
 
