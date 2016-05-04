@@ -1,0 +1,8 @@
+---
+title: Implement a loadbalancer
+credit:
+  - Gleicon Moraes
+  - Indirectly Ezra Zygmuntovicz which showed something like it in a Redis users meeting 
+tags:
+  - load balancer
+  - scored sets

@@ -33,3 +33,6 @@ http://github.com/nateware/redis-objects
 
 How to write a boogle clone (Nick Quaranto)
 http://github.com/qrush/beesknees
+
+How to extend queues to use COMET and HTTP as transport (Gleicon Moraes):
+http://github.com/gleicon/restmq

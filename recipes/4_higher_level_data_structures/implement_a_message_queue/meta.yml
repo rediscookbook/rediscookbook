@@ -1,0 +1,7 @@
+---
+title: Implement a Message Queue
+credit:
+  - Gleicon Moraes 
+tags:
+  - Message Queue
+  - Multiple Queues per Redis
